@@ -7,19 +7,19 @@ public class Transacao {
 	
 	private Transacao next;
 	public static final int length = 0;
-   String cpf_comprador,cpf_vendedor,produto,nome;
-   int qntd;
+   String CpfComprador,CpfVendedor,produto,nome;
+   int quantidade;
    double preco;
-	public Transacao(String cpf_comprador, String cpf_vendedor, String produto,int Quantidade,double preco) {
+	public Transacao(String CpfComprador, String CpfVendedor, String produto,int Quantidade,double preco) {
 		next = null;
-		this.cpf_comprador=cpf_comprador;
-		this.cpf_vendedor=cpf_vendedor;
+		this.CpfComprador=CpfComprador;
+		this.CpfVendedor=CpfVendedor;
 		this.produto=produto;
-		this.qntd=Quantidade;
+		this.quantidade=Quantidade;
 		this.preco=preco;
 	     this.nome = nome;
 	        if (Quantidade > 0){
-	            this.qntd = Quantidade;
+	            this.quantidade = Quantidade;
 	        }else {
 	            try {
 					throw new QuantidadeInvalidoException();
@@ -43,11 +43,11 @@ public class Transacao {
 
 	public String getCPFComprador() {	
 		
-		return cpf_comprador;
+		return CpfComprador;
 	}
 
 	public String getCPFVendedor() {
-		return cpf_vendedor;
+		return CpfVendedor;
 	}
 
 	public String getProduto() {
@@ -56,7 +56,7 @@ public class Transacao {
 
 	
 	public int getQuantidade() {
-		return qntd;
+		return quantidade;
 	}
 	public double getPreco() {
 		return preco;
@@ -70,7 +70,7 @@ public class Transacao {
    
 
     public double getValor() {
-        return qntd;
+        return quantidade;
     }
 
     

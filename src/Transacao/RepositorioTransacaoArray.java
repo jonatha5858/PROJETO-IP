@@ -11,16 +11,21 @@ public class RepositorioTransacaoArray {
 
 	public RepositorioTransacaoArray() {
 		transacoes = new Transacao[50];
-		for (int i = 0; i < Transacao.length; i++) {
+		for (int i = 0; i < transacoes.length; i++) {
 			transacoes[i] = null;
+		}
+		
+		transacao = new Transacao[50];
+		for (int i = 0; i < transacao.length; i++) {
+			transacao[i] = null;
 		}
 	}
 
-	/*public void cadastrar (String CpfComprador, String CpfVendedor, String Produto, int Quantidade,double Preco)  {
+	public void cadastrar (String CpfComprador, String CpfVendedor, String Produto, int Quantidade,double Preco)  {
 		Transacao transac = new Transacao 
 			(CpfComprador,CpfVendedor,Produto,Quantidade,Preco);
-		inserir1(transac);
-	}*/
+		inserir(transac);
+	}
 
 	/*public void inserir1(Transacao Transacao) {
 		for (int i = 0; i < transacoes.length; i++) {

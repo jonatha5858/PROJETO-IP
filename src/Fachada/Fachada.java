@@ -1,4 +1,5 @@
 package Fachada;
+import java.lang.NullPointerException;
 import Transacao.RepositorioTransacaoArray;
 import Transacao.RepositorioTransacaoLista;
 import Transacao.Transacao;

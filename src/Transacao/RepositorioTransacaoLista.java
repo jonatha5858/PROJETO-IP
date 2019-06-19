@@ -18,28 +18,28 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	        this.transacao = null;
 	        this.proximo = null;
 	    }
-	   /* public void cadastrar (String CpfComprador, String CpfVendedor, String Produto, int Quantidade,double Preco)  {
+	    public void cadastrar (String CpfComprador, String CpfVendedor, String Produto, int Quantidade,double Preco)  {
 			Transacao transac = new Transacao 
 				(CpfComprador,CpfVendedor,Produto,Quantidade,Preco);
-			inserir1(transac);
-		}*/
+			inserir(transac);
+		}
 	    
+	    //public void inserir(Transacao transacao) {
+	      //  ultimo.setNext(transacao);
+	        //ultimo = transacao;
+	        //length++;
+	    //}
+	    
+	    
+	    //Metodo para inserir novas transacoes.
 	    public void inserir(Transacao transacao) {
-	        ultimo.setNext(transacao);
-	        ultimo = transacao;
-	        length++;
-	    }
-	    
-	    
-	    //Metodo para inserir novos produtos.
-	   /* public void inserir(Transacao transacao) {
 	        if(this.transacao==null){
 	            this.transacao = transacao;
 	            this.proximo = new RepositorioTransacaoLista();
 	        }else{
-	            this.proximo.inserir(transacao);
+	            ((RepositorioTransacaoLista) this.proximo).inserir(transacao);
 	        }
-	    }*/
+	    }
 	    
 	    public void remover(String CPF) throws TransacaoNaoEncontradaException {
 	        Transacao transacao = primeiro;
@@ -55,7 +55,8 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	        TransacaoNaoEncontradaException excecao;
 			excecao= new TransacaoNaoEncontradaException(CPF);
 			throw excecao; 
-	    }
+	    } 
+	    
 	    
 	    
 	    
@@ -66,10 +67,10 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	            throw new TransacaoNaoEncontradaException(nome);
 	        }else{
 	            if (this.transacao.getNome().equals(nome)){
-	                this.transacao = this.proximo.transacao;
-	                this.proximo = this.proximo.transacao;
+	                this.transacao = this.proximo.transacoes;
+	                this.proximo = this.proximo.transacoes;
 	            }else{
-	                this.proximo.remover(nome);
+	                ((RepositorioTransacaoLista) this.proximo).remover(nome);
 	            }
 	        }
 	        }*/
@@ -92,7 +93,7 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	    }
 	    
 	    
-	  //Metodo para procurar por produtos.
+	  //Metodo para procurar por transacoes.
 	  /*  public Transacao procurar(String nome)
 	    throws TransacaoNaoEncontradaException{
 	        if(this.transacao == null){
@@ -133,16 +134,16 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	    
 	    
 	    //Metodo para atualizar produtos.
-	  /*  public void atualizar (Transacao transacao)
+	    public void atualizar (Transacao transacao)
 	        throws TransacaoNaoEncontradaException{
 	        if(this.transacao == null){
 	            throw new TransacaoNaoEncontradaException(transacao.getNome());
 	        }else if(this.transacao.getNome().equals(transacao.getNome())){
 	                this.transacao = transacao;
 	        }else{
-	                this.proximo.atualizar(transacao);
+	                ((RepositorioTransacaoLista) this.proximo).atualizar(transacao);
 	            }
-	        }*/
+	        }
 
 	    		
 	    	
@@ -165,19 +166,18 @@ public class RepositorioTransacaoLista implements RepositorioTransacao{
 	    }
 
 		
-		public void atualizar(Transacao transacao) throws TransacaoNaoEncontradaException {
-			// TODO Auto-generated method stub
-			 //       if(this.transacao == null){
-			   //         throw new TransacaoNaoEncontradaException(transacao.getNome());
-			     //   }else if(this.transacao.getNome().equals(transacao.getNome())){
-			       //         this.transacao = transacao;
-			        //}else{
-			          //      this.proximo.atualizar(transacao);
-			            //}
+		/*public void atualizar(Transacao transacao) throws TransacaoNaoEncontradaException {
+			       if(this.transacao == null){
+			            throw new TransacaoNaoEncontradaException(transacao.getNome());
+			        }else if(this.transacao.getNome().equals(transacao.getNome())){
+			                this.transacao = transacao;
+			        }else{
+			                ((RepositorioTransacaoLista) this.proximo).atualizar(transacao);
+			            }*/
 			 
 		
 			 }
-		}
+		
 
 		
 	
